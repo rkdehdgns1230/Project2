@@ -66,30 +66,30 @@ void datecmp(){
 void timecmp(){
     printf("time compare\n");
 
-    file1 = localtime(&stat1.st_mtime);
-    int file1_min = time1->tm_min;
-    int file1_hour = time1->tm_hour;
+    time1 = localtime(&stat1.st_mtime);
+    int time1_hour = time1->tm_hour;
+    int time1_min = time1->tm_min;
 
-    file2 = localtime(&stat2.st_mtime);
-    int file2_min = time2->tm_min;
-    int file2_hour = time2->tm_hour;
+    time2 = localtime(&stat2.st_mtime);
+    int time2_hour = time2->tm_hour;
+    int time2_min = time2->tm_min;
 
-    if (file1_hour < file2_hour) {
+    if (time1_hour < time2_hour) {
         printf("file1 is early\n");
     }
-    else if (file1_hour > file2_hour) {
+    else if (time1_hour > time2_hour) {
         printf("file2 is early\n");
     }
     else
     {
-        if (file1_min < file2_min) {
+        if (time1_min < time2_min) {
             printf("file1 is early\n");
         }
-        else if (file1_min > file2_min) {
+        else if (time1_min > time2_min) {
             printf("file2 is early\n");
         }
         else {
-            printf("two files are same access time\n");
+            printf("two file has same access time\n");
         }
     }
     printf("\n");
