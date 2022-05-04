@@ -29,7 +29,7 @@ int main(){
 
 //파일 1의 정보를 가져오는 함수 작성
 void filestat1(){
-    stat('./text1', &stat1);
+    stat(". /text1", &stat1);
 }
 
 //파일 2의 정보를 가져오는 함수 작성
@@ -61,7 +61,7 @@ void sizecmp(){
     }
 
     else if (size_of_file2 > size_of_file1) {
-        printf("text_2 is biggerthan text_1.\n");
+        printf("text_2 is bigger than text_1.\n");
     }
 
     else {
